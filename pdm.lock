@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["cross_platform"]
 lock_version = "4.4"
-content_hash = "sha256:92979d9690a644be9a6742813acd6e518bd5ed37435c7030f93057319ce7488f"
+content_hash = "sha256:34ad5bba67ffa7154b039a356f36974835d2b00c5440815274bfca48bdca890c"
 
 [[package]]
 name = "aiohttp"
@@ -263,6 +263,26 @@ files = [
 ]
 
 [[package]]
+name = "bert-score"
+version = "0.3.13"
+requires_python = ">=3.6"
+summary = "PyTorch implementation of BERT score"
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "packaging>=20.9",
+    "pandas>=1.0.1",
+    "requests",
+    "torch>=1.0.0",
+    "tqdm>=4.31.1",
+    "transformers>=3.0.0",
+]
+files = [
+    {file = "bert_score-0.3.13-py3-none-any.whl", hash = "sha256:bbbb4c7fcdaa46d7681aff49f37f96faa09ed74e1b150e659bdc6b58a66989b9"},
+    {file = "bert_score-0.3.13.tar.gz", hash = "sha256:8ffe5838eac8cdd988b8b1a896af7f49071188c8c011a1ed160d71a9899a2ba4"},
+]
+
+[[package]]
 name = "blinker"
 version = "1.7.0"
 requires_python = ">=3.8"
@@ -281,6 +301,23 @@ dependencies = [
 ]
 files = [
     {file = "bs4-0.0.1.tar.gz", hash = "sha256:36ecea1fd7cc5c0c6e4a1ff075df26d50da647b75376626cc186e2212886dd3a"},
+]
+
+[[package]]
+name = "build"
+version = "1.0.3"
+requires_python = ">= 3.7"
+summary = "A simple, correct Python build frontend"
+dependencies = [
+    "colorama; os_name == \"nt\"",
+    "importlib-metadata>=4.6; python_version < \"3.10\"",
+    "packaging>=19.0",
+    "pyproject-hooks",
+    "tomli>=1.1.0; python_version < \"3.11\"",
+]
+files = [
+    {file = "build-1.0.3-py3-none-any.whl", hash = "sha256:589bf99a67df7c9cf07ec0ac0e5e2ea5d4b37ac63301c4986d1acb126aa83f8f"},
+    {file = "build-1.0.3.tar.gz", hash = "sha256:538aab1b64f9828977f84bc63ae570b060a8ed1be419e7870b8b4fc5e6ea553b"},
 ]
 
 [[package]]
@@ -456,12 +493,13 @@ files = [
 
 [[package]]
 name = "chromadb"
-version = "0.4.20"
+version = "0.4.22"
 requires_python = ">=3.8"
 summary = "Chroma."
 dependencies = [
     "PyYAML>=6.0.0",
     "bcrypt>=4.0.1",
+    "build>=1.0.3",
     "chroma-hnswlib==0.7.3",
     "fastapi>=0.95.2",
     "grpcio>=1.58.0",
@@ -488,8 +526,8 @@ dependencies = [
     "uvicorn[standard]>=0.18.3",
 ]
 files = [
-    {file = "chromadb-0.4.20-py3-none-any.whl", hash = "sha256:0b8ca7d22483273b12a282af7a4fbad0a804207d4431324a4673741fe3c92028"},
-    {file = "chromadb-0.4.20.tar.gz", hash = "sha256:69eb699ad6a5e46a2b558c8770ab91041dc32061ad66403aa8224fe5750229c5"},
+    {file = "chromadb-0.4.22-py3-none-any.whl", hash = "sha256:ad210b27b4cda2f09d15adc9c83c81bfa66b69f39648a27b637306e40de0680d"},
+    {file = "chromadb-0.4.22.tar.gz", hash = "sha256:c793149e1c2bbbb52d77602c6c0594c5752f04cd9be12619250ddad2082af27a"},
 ]
 
 [[package]]
@@ -507,31 +545,31 @@ files = [
 
 [[package]]
 name = "cmake"
-version = "3.27.7"
+version = "3.28.1"
 summary = "CMake is an open-source, cross-platform family of tools designed to build, test and package software"
 files = [
-    {file = "cmake-3.27.7-py2.py3-none-macosx_10_10_universal2.macosx_10_10_x86_64.macosx_11_0_arm64.macosx_11_0_universal2.whl", hash = "sha256:d582ef3e9ff0bd113581c1a32e881d1c2f9a34d2de76c93324a28593a76433db"},
-    {file = "cmake-3.27.7-py2.py3-none-manylinux2010_i686.manylinux_2_12_i686.whl", hash = "sha256:8056c99e371ff57229df2068364d7c32fea716cb53b4675f639edfb62663decf"},
-    {file = "cmake-3.27.7-py2.py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl", hash = "sha256:68983b09de633fc1ce6ab6bce9a25bfa181e41598e7c6bc0a6c0108773ee01cb"},
-    {file = "cmake-3.27.7-py2.py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:8bd1e1fa4fc8de7605c663d9408dceb649112f855aab05cca31fdb72e4d78364"},
-    {file = "cmake-3.27.7-py2.py3-none-manylinux2014_i686.manylinux_2_17_i686.whl", hash = "sha256:c981aafcca2cd7210bd210ec75710c0f34e1fde1998cdcab812e4133e3ab615d"},
-    {file = "cmake-3.27.7-py2.py3-none-manylinux2014_ppc64le.manylinux_2_17_ppc64le.whl", hash = "sha256:1b9067ce0251cba3d4c018f2e1577ba9078e9c1eff6ad607ad5ce867843d4571"},
-    {file = "cmake-3.27.7-py2.py3-none-manylinux2014_s390x.manylinux_2_17_s390x.whl", hash = "sha256:b8a2fcb619b89d1cce7b52828316de9a1f27f0c90c2e39d1eae886428c8ee8c6"},
-    {file = "cmake-3.27.7-py2.py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:499b38c77d52fb1964dbb38d0228fed246263a181939a8e753fde8ca227c8e1e"},
-    {file = "cmake-3.27.7-py2.py3-none-musllinux_1_1_aarch64.whl", hash = "sha256:2fb48c780f1a6a3d19e785ebbb754be79d369e25a1cb81043fab049e709564da"},
-    {file = "cmake-3.27.7-py2.py3-none-musllinux_1_1_i686.whl", hash = "sha256:7bf96237ba11ce2437dc5e071d96b510120a1be4708c631a64b2f38fb46bbd77"},
-    {file = "cmake-3.27.7-py2.py3-none-musllinux_1_1_ppc64le.whl", hash = "sha256:009058bdf4f488709f38eaa5dd0ef0f89c6b9c6b6edd9d5b475a308ef75f80bb"},
-    {file = "cmake-3.27.7-py2.py3-none-musllinux_1_1_s390x.whl", hash = "sha256:591f6b056527aefec009bc61a388776b2fc62444deb0038112a471031f61aeca"},
-    {file = "cmake-3.27.7-py2.py3-none-musllinux_1_1_x86_64.whl", hash = "sha256:bd40d46dbad3555d5b3ce054bef24b85f256b19139493773751ab6f2b71c1219"},
-    {file = "cmake-3.27.7-py2.py3-none-win32.whl", hash = "sha256:bdbf0256f554f68c7b1d9740f5d059daf875b685c81a479cbe69038e84eb2fb9"},
-    {file = "cmake-3.27.7-py2.py3-none-win_amd64.whl", hash = "sha256:810e592b606d05a3080a9c19ea839b13226f62cae447a22485b2365782f6b926"},
-    {file = "cmake-3.27.7-py2.py3-none-win_arm64.whl", hash = "sha256:72289361866314f73be2ae63ddee224ff70223dcef9feb66d0072bf17e245564"},
-    {file = "cmake-3.27.7.tar.gz", hash = "sha256:9f4a7c7be2a25de5901f045618f41b833ea6c0f647115201d38e4fdf7e2815bc"},
+    {file = "cmake-3.28.1-py2.py3-none-macosx_10_10_universal2.macosx_10_10_x86_64.macosx_11_0_arm64.macosx_11_0_universal2.whl", hash = "sha256:9c77c47afef821c0044ba73d182c386ab02e92e6bda5296e553c12455a083f29"},
+    {file = "cmake-3.28.1-py2.py3-none-manylinux2010_i686.manylinux_2_12_i686.whl", hash = "sha256:6a9549755d1178426502753d48949edae9bb0c66f15a07f09904783125beb0e3"},
+    {file = "cmake-3.28.1-py2.py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl", hash = "sha256:d0978cdd08c0ebc76f4f8543aba1381a41580dcb9c3bcffb536c41337b75aea1"},
+    {file = "cmake-3.28.1-py2.py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:96d506c417d63bbcff19b3e9eaa69fe546456a0ddeffe914bcbb23cceee6818e"},
+    {file = "cmake-3.28.1-py2.py3-none-manylinux2014_i686.manylinux_2_17_i686.whl", hash = "sha256:74c9878c504ccc6ddd5b0914cbe3b86417a36a2c2dfc486040bfdfe63fbbb1ac"},
+    {file = "cmake-3.28.1-py2.py3-none-manylinux2014_ppc64le.manylinux_2_17_ppc64le.whl", hash = "sha256:64d4642c48486bb4320540781a2266c2060929d1e236d6eb2b2c96273e75e958"},
+    {file = "cmake-3.28.1-py2.py3-none-manylinux2014_s390x.manylinux_2_17_s390x.whl", hash = "sha256:363bd0124d71d7e3d9b1ac9bd1dce1d80ba90f48b264c3bf9dbfcfda875cafc9"},
+    {file = "cmake-3.28.1-py2.py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:1be8f351271f8bcbe32288066e5add642d7c32f2f8fec3f135949c2cb13dfac2"},
+    {file = "cmake-3.28.1-py2.py3-none-musllinux_1_1_aarch64.whl", hash = "sha256:3ed193134a4937bad8de2b4f62faebc8c1a4049cd37dad9767db7e7d91a08b52"},
+    {file = "cmake-3.28.1-py2.py3-none-musllinux_1_1_i686.whl", hash = "sha256:6ffb1fdb0b0f7f11271d82b5892c2edc109d561e186f882def095970403e2110"},
+    {file = "cmake-3.28.1-py2.py3-none-musllinux_1_1_ppc64le.whl", hash = "sha256:9ea12ebe4b8266f04d6619ed64860bd6e687522f02caf3131515dd39d614ef00"},
+    {file = "cmake-3.28.1-py2.py3-none-musllinux_1_1_s390x.whl", hash = "sha256:2ad22d897d2ed38544e5ef26ee21c4dccc38e938660cd07497fd6bdba0993ea6"},
+    {file = "cmake-3.28.1-py2.py3-none-musllinux_1_1_x86_64.whl", hash = "sha256:379a730b274f39e5858ef2107861b2727918493347b0ccdd5f62bcbb6a8450d9"},
+    {file = "cmake-3.28.1-py2.py3-none-win32.whl", hash = "sha256:c82bc0eb1495cf518cb4f355b8a73e584e67d53453406c0498bacc454cf6c404"},
+    {file = "cmake-3.28.1-py2.py3-none-win_amd64.whl", hash = "sha256:bb03ed4753185d0c70c0bc3212e5533e20eb2c17fa0ca1e7603b702c6d0db8cf"},
+    {file = "cmake-3.28.1-py2.py3-none-win_arm64.whl", hash = "sha256:40f0671c05ef7eec27c4f53c63630b0b621e40f80ab38607d3a0e3a1f2c9242a"},
+    {file = "cmake-3.28.1.tar.gz", hash = "sha256:0d4051d101d151d8387156c463aa45c8cd0e164f870e0ac0c8c91d3ff08528e1"},
 ]
 
 [[package]]
 name = "cohere"
-version = "4.39"
+version = "4.40"
 requires_python = ">=3.8,<4.0"
 summary = "Python SDK for the Cohere API"
 dependencies = [
@@ -543,8 +581,8 @@ dependencies = [
     "urllib3<3,>=1.26",
 ]
 files = [
-    {file = "cohere-4.39-py3-none-any.whl", hash = "sha256:7f157b7ac0a70b1dda77dc56c4fc063e8d21efcd2bb13759cd5b6839080405e7"},
-    {file = "cohere-4.39.tar.gz", hash = "sha256:9e94bb1e5b2e2d464738e0ab3c99ed2879c043cccc90ecbeffd124e81867745d"},
+    {file = "cohere-4.40-py3-none-any.whl", hash = "sha256:75dac8369d97fadc05901352d9db64a0ca6cd40c08423f3c4691f57eb7b131e7"},
+    {file = "cohere-4.40.tar.gz", hash = "sha256:d9e5c1fa7f80a193c03330a634954b927bf188ead7dcfdb51865480f73aebda8"},
 ]
 
 [[package]]
@@ -1293,7 +1331,7 @@ files = [
 
 [[package]]
 name = "ipykernel"
-version = "6.27.1"
+version = "6.28.0"
 requires_python = ">=3.8"
 summary = "IPython Kernel for Jupyter"
 dependencies = [
@@ -1307,13 +1345,13 @@ dependencies = [
     "nest-asyncio",
     "packaging",
     "psutil",
-    "pyzmq>=20",
+    "pyzmq>=24",
     "tornado>=6.1",
     "traitlets>=5.4.0",
 ]
 files = [
-    {file = "ipykernel-6.27.1-py3-none-any.whl", hash = "sha256:dab88b47f112f9f7df62236511023c9bdeef67abc73af7c652e4ce4441601686"},
-    {file = "ipykernel-6.27.1.tar.gz", hash = "sha256:7d5d594b6690654b4d299edba5e872dc17bb7396a8d0609c97cb7b8a1c605de6"},
+    {file = "ipykernel-6.28.0-py3-none-any.whl", hash = "sha256:c6e9a9c63a7f4095c0a22a79f765f079f9ec7be4f2430a898ddea889e8665661"},
+    {file = "ipykernel-6.28.0.tar.gz", hash = "sha256:69c11403d26de69df02225916f916b37ea4b9af417da0a8c827f84328d88e5f3"},
 ]
 
 [[package]]
@@ -1580,7 +1618,7 @@ files = [
 
 [[package]]
 name = "langchain"
-version = "0.0.350"
+version = "0.0.353"
 requires_python = ">=3.8.1,<4.0"
 summary = "Building applications with LLMs through composability"
 dependencies = [
@@ -1591,16 +1629,16 @@ dependencies = [
     "dataclasses-json<0.7,>=0.5.7",
     "jsonpatch<2.0,>=1.33",
     "langchain-community<0.1,>=0.0.2",
-    "langchain-core<0.2,>=0.1",
-    "langsmith<0.1.0,>=0.0.63",
+    "langchain-core<0.2,>=0.1.4",
+    "langsmith<0.1.0,>=0.0.70",
     "numpy<2,>=1",
     "pydantic<3,>=1",
     "requests<3,>=2",
     "tenacity<9.0.0,>=8.1.0",
 ]
 files = [
-    {file = "langchain-0.0.350-py3-none-any.whl", hash = "sha256:11b605f325a4271a7815baaec05bc7622e3ad1f10f26b05c752cafa27663ed38"},
-    {file = "langchain-0.0.350.tar.gz", hash = "sha256:f0e68a92d200bb722586688ab7b411b2430bd98ad265ca03b264e7e7acbb6c01"},
+    {file = "langchain-0.0.353-py3-none-any.whl", hash = "sha256:54cac8b74fbefacddcdf0c443619a7331d6b59fe94fa2a48a4d7da2b59cf1f63"},
+    {file = "langchain-0.0.353.tar.gz", hash = "sha256:a095ea819f13a3606ced699182a8369eb2d77034ec8c913983675d6dd9a98196"},
 ]
 
 [[package]]
@@ -1626,7 +1664,7 @@ files = [
 
 [[package]]
 name = "langchain-core"
-version = "0.1.1"
+version = "0.1.5"
 requires_python = ">=3.8.1,<4.0"
 summary = "Building applications with LLMs through composability"
 dependencies = [
@@ -1640,13 +1678,13 @@ dependencies = [
     "tenacity<9.0.0,>=8.1.0",
 ]
 files = [
-    {file = "langchain_core-0.1.1-py3-none-any.whl", hash = "sha256:35b49abde43f37aa2fb2f9a2e11331218036dc34395943d12c2d305d5512a8be"},
-    {file = "langchain_core-0.1.1.tar.gz", hash = "sha256:1253acc691548e8ae97c864cc94370d94fbc9e3244751aeaad0b1e9d5150eca4"},
+    {file = "langchain_core-0.1.5-py3-none-any.whl", hash = "sha256:e249c2cc858c5e3bc890e3f0aa91486a23b4a2845579c29311dc85f04dae8937"},
+    {file = "langchain_core-0.1.5.tar.gz", hash = "sha256:a5d44dddac565c35dd3a23d4605405e8d4bb90604fc0713f13a56982a5082d14"},
 ]
 
 [[package]]
 name = "langsmith"
-version = "0.0.65"
+version = "0.0.77"
 requires_python = ">=3.8.1,<4.0"
 summary = "Client library to connect to the LangSmith LLM Tracing and Evaluation Platform."
 dependencies = [
@@ -1654,21 +1692,21 @@ dependencies = [
     "requests<3,>=2",
 ]
 files = [
-    {file = "langsmith-0.0.65-py3-none-any.whl", hash = "sha256:92450957d1c6b6be814f9b726f3bc751deca684535fb404508ccad7aec1bb049"},
-    {file = "langsmith-0.0.65.tar.gz", hash = "sha256:ef20e2e32392fb1a0fc5d171e8de595d868b4153a10cc119d7bf8418192c06b6"},
+    {file = "langsmith-0.0.77-py3-none-any.whl", hash = "sha256:750c0aa9177240c64e131d831e009ed08dd59038f7cabbd0bbcf62ccb7c8dcac"},
+    {file = "langsmith-0.0.77.tar.gz", hash = "sha256:c4c8d3a96ad8671a41064f3ccc673e2e22a4153e823b19f915c9c9b8a4f33a2c"},
 ]
 
 [[package]]
 name = "lit"
-version = "17.0.5"
+version = "17.0.6"
 summary = "A Software Testing Tool"
 files = [
-    {file = "lit-17.0.5.tar.gz", hash = "sha256:696199a629c73712a5bebda533729ea2c7e4c798bcfc38d9cd1375aa668ced98"},
+    {file = "lit-17.0.6.tar.gz", hash = "sha256:dfa9af9b55fc4509a56be7bf2346f079d7f4a242d583b9f2e0b078fd0abae31b"},
 ]
 
 [[package]]
 name = "llama-index"
-version = "0.9.15.post2"
+version = "0.9.25.post1"
 requires_python = ">=3.8.1,<4.0"
 summary = "Interface between LLMs and your data"
 dependencies = [
@@ -1687,13 +1725,24 @@ dependencies = [
     "requests>=2.31.0",
     "tenacity<9.0.0,>=8.2.0",
     "tiktoken>=0.3.3",
-    "types-protobuf<5.0.0.0,>=4.24.0.4",
     "typing-extensions>=4.5.0",
     "typing-inspect>=0.8.0",
 ]
 files = [
-    {file = "llama_index-0.9.15.post2-py3-none-any.whl", hash = "sha256:58b230318a7143a70a81cd2f8053cfbea9d90a9b9b922812fb9333b054b02c1f"},
-    {file = "llama_index-0.9.15.post2.tar.gz", hash = "sha256:954a2f26f80a78b470c0406fabeef3e7c04f603713344297ecf4a9b470c90257"},
+    {file = "llama_index-0.9.25.post1-py3-none-any.whl", hash = "sha256:8f79fa5072fbbe0ab61d5983ab51adf92449788a2e68f79bb717576a3706f547"},
+    {file = "llama_index-0.9.25.post1.tar.gz", hash = "sha256:2de8e2055a19f29db33d828196fa3e42b5a5e06a537c27057b78ca034eec1bbc"},
+]
+
+[[package]]
+name = "llmsherpa"
+version = "0.1.3"
+summary = "Strategic APIs to Accelerate LLM Use Cases"
+dependencies = [
+    "urllib3",
+]
+files = [
+    {file = "llmsherpa-0.1.3-py3-none-any.whl", hash = "sha256:89a10d5ca5f0ed34986dbefe226ea03d2bc2b8ef16faaebb73e0a372bfda9424"},
+    {file = "llmsherpa-0.1.3.tar.gz", hash = "sha256:ea686529f45643faf4213967d63b0760c8f2dd7cbf8b26f0993c4fc3eb4f003f"},
 ]
 
 [[package]]
@@ -2190,147 +2239,6 @@ files = [
 ]
 
 [[package]]
-name = "nvidia-cublas-cu11"
-version = "11.10.3.66"
-requires_python = ">=3"
-summary = "CUBLAS native runtime libraries"
-dependencies = [
-    "setuptools",
-    "wheel",
-]
-files = [
-    {file = "nvidia_cublas_cu11-11.10.3.66-py3-none-manylinux1_x86_64.whl", hash = "sha256:d32e4d75f94ddfb93ea0a5dda08389bcc65d8916a25cb9f37ac89edaeed3bded"},
-    {file = "nvidia_cublas_cu11-11.10.3.66-py3-none-win_amd64.whl", hash = "sha256:8ac17ba6ade3ed56ab898a036f9ae0756f1e81052a317bf98f8c6d18dc3ae49e"},
-]
-
-[[package]]
-name = "nvidia-cuda-cupti-cu11"
-version = "11.7.101"
-requires_python = ">=3"
-summary = "CUDA profiling tools runtime libs."
-dependencies = [
-    "setuptools",
-    "wheel",
-]
-files = [
-    {file = "nvidia_cuda_cupti_cu11-11.7.101-py3-none-manylinux1_x86_64.whl", hash = "sha256:e0cfd9854e1f2edaa36ca20d21cd0bdd5dcfca4e3b9e130a082e05b33b6c5895"},
-    {file = "nvidia_cuda_cupti_cu11-11.7.101-py3-none-win_amd64.whl", hash = "sha256:7cc5b8f91ae5e1389c3c0ad8866b3b016a175e827ea8f162a672990a402ab2b0"},
-]
-
-[[package]]
-name = "nvidia-cuda-nvrtc-cu11"
-version = "11.7.99"
-requires_python = ">=3"
-summary = "NVRTC native runtime libraries"
-files = [
-    {file = "nvidia_cuda_nvrtc_cu11-11.7.99-2-py3-none-manylinux1_x86_64.whl", hash = "sha256:9f1562822ea264b7e34ed5930567e89242d266448e936b85bc97a3370feabb03"},
-    {file = "nvidia_cuda_nvrtc_cu11-11.7.99-py3-none-manylinux1_x86_64.whl", hash = "sha256:f7d9610d9b7c331fa0da2d1b2858a4a8315e6d49765091d28711c8946e7425e7"},
-    {file = "nvidia_cuda_nvrtc_cu11-11.7.99-py3-none-win_amd64.whl", hash = "sha256:f2effeb1309bdd1b3854fc9b17eaf997808f8b25968ce0c7070945c4265d64a3"},
-]
-
-[[package]]
-name = "nvidia-cuda-runtime-cu11"
-version = "11.7.99"
-requires_python = ">=3"
-summary = "CUDA Runtime native Libraries"
-dependencies = [
-    "setuptools",
-    "wheel",
-]
-files = [
-    {file = "nvidia_cuda_runtime_cu11-11.7.99-py3-none-manylinux1_x86_64.whl", hash = "sha256:cc768314ae58d2641f07eac350f40f99dcb35719c4faff4bc458a7cd2b119e31"},
-    {file = "nvidia_cuda_runtime_cu11-11.7.99-py3-none-win_amd64.whl", hash = "sha256:bc77fa59a7679310df9d5c70ab13c4e34c64ae2124dd1efd7e5474b71be125c7"},
-]
-
-[[package]]
-name = "nvidia-cudnn-cu11"
-version = "8.5.0.96"
-requires_python = ">=3"
-summary = "cuDNN runtime libraries"
-dependencies = [
-    "nvidia-cublas-cu11",
-]
-files = [
-    {file = "nvidia_cudnn_cu11-8.5.0.96-2-py3-none-manylinux1_x86_64.whl", hash = "sha256:402f40adfc6f418f9dae9ab402e773cfed9beae52333f6d86ae3107a1b9527e7"},
-    {file = "nvidia_cudnn_cu11-8.5.0.96-py3-none-manylinux1_x86_64.whl", hash = "sha256:71f8111eb830879ff2836db3cccf03bbd735df9b0d17cd93761732ac50a8a108"},
-]
-
-[[package]]
-name = "nvidia-cufft-cu11"
-version = "10.9.0.58"
-requires_python = ">=3"
-summary = "CUFFT native runtime libraries"
-files = [
-    {file = "nvidia_cufft_cu11-10.9.0.58-py3-none-manylinux1_x86_64.whl", hash = "sha256:222f9da70c80384632fd6035e4c3f16762d64ea7a843829cb278f98b3cb7dd81"},
-    {file = "nvidia_cufft_cu11-10.9.0.58-py3-none-win_amd64.whl", hash = "sha256:c4d316f17c745ec9c728e30409612eaf77a8404c3733cdf6c9c1569634d1ca03"},
-]
-
-[[package]]
-name = "nvidia-curand-cu11"
-version = "10.2.10.91"
-requires_python = ">=3"
-summary = "CURAND native runtime libraries"
-dependencies = [
-    "setuptools",
-    "wheel",
-]
-files = [
-    {file = "nvidia_curand_cu11-10.2.10.91-py3-none-manylinux1_x86_64.whl", hash = "sha256:eecb269c970fa599a2660c9232fa46aaccbf90d9170b96c462e13bcb4d129e2c"},
-    {file = "nvidia_curand_cu11-10.2.10.91-py3-none-win_amd64.whl", hash = "sha256:f742052af0e1e75523bde18895a9ed016ecf1e5aa0ecddfcc3658fd11a1ff417"},
-]
-
-[[package]]
-name = "nvidia-cusolver-cu11"
-version = "11.4.0.1"
-requires_python = ">=3"
-summary = "CUDA solver native runtime libraries"
-dependencies = [
-    "nvidia-cublas-cu11",
-]
-files = [
-    {file = "nvidia_cusolver_cu11-11.4.0.1-2-py3-none-manylinux1_x86_64.whl", hash = "sha256:72fa7261d755ed55c0074960df5904b65e2326f7adce364cbe4945063c1be412"},
-    {file = "nvidia_cusolver_cu11-11.4.0.1-py3-none-manylinux1_x86_64.whl", hash = "sha256:700b781bfefd57d161443aff9ace1878584b93e0b2cfef3d6e9296d96febbf99"},
-    {file = "nvidia_cusolver_cu11-11.4.0.1-py3-none-win_amd64.whl", hash = "sha256:00f70b256add65f8c1eb3b6a65308795a93e7740f6df9e273eccbba770d370c4"},
-]
-
-[[package]]
-name = "nvidia-cusparse-cu11"
-version = "11.7.4.91"
-requires_python = ">=3"
-summary = "CUSPARSE native runtime libraries"
-dependencies = [
-    "setuptools",
-    "wheel",
-]
-files = [
-    {file = "nvidia_cusparse_cu11-11.7.4.91-py3-none-manylinux1_x86_64.whl", hash = "sha256:a3389de714db63321aa11fbec3919271f415ef19fda58aed7f2ede488c32733d"},
-    {file = "nvidia_cusparse_cu11-11.7.4.91-py3-none-win_amd64.whl", hash = "sha256:304a01599534f5186a8ed1c3756879282c72c118bc77dd890dc1ff868cad25b9"},
-]
-
-[[package]]
-name = "nvidia-nccl-cu11"
-version = "2.14.3"
-requires_python = ">=3"
-summary = "NVIDIA Collective Communication Library (NCCL) Runtime"
-files = [
-    {file = "nvidia_nccl_cu11-2.14.3-py3-none-manylinux1_x86_64.whl", hash = "sha256:5e5534257d1284b8e825bc3a182c6f06acd6eb405e9f89d49340e98cd8f136eb"},
-]
-
-[[package]]
-name = "nvidia-nvtx-cu11"
-version = "11.7.91"
-requires_python = ">=3"
-summary = "NVIDIA Tools Extension"
-dependencies = [
-    "setuptools",
-    "wheel",
-]
-files = [
-    {file = "nvidia_nvtx_cu11-11.7.91-py3-none-manylinux1_x86_64.whl", hash = "sha256:b22c64eee426a62fc00952b507d6d29cf62b4c9df7a480fcc417e540e05fd5ac"},
-    {file = "nvidia_nvtx_cu11-11.7.91-py3-none-win_amd64.whl", hash = "sha256:dfd7fcb2a91742513027d63a26b757f38dd8b07fecac282c4d132a9d373ff064"},
-]
-
-[[package]]
 name = "oauthlib"
 version = "3.2.2"
 requires_python = ">=3.6"
@@ -2375,7 +2283,7 @@ files = [
 
 [[package]]
 name = "openai"
-version = "1.5.0"
+version = "1.6.1"
 requires_python = ">=3.7.1"
 summary = "The official Python library for the openai API"
 dependencies = [
@@ -2385,11 +2293,11 @@ dependencies = [
     "pydantic<3,>=1.9.0",
     "sniffio",
     "tqdm>4",
-    "typing-extensions<5,>=4.5",
+    "typing-extensions<5,>=4.7",
 ]
 files = [
-    {file = "openai-1.5.0-py3-none-any.whl", hash = "sha256:42d8c84b0714c990e18afe81d37f8a64423e8196bf7157b8ea665b8d8f393253"},
-    {file = "openai-1.5.0.tar.gz", hash = "sha256:4cd91e97988ccd6c44f815107def9495cbc718aeb8b28be33a87b6fa2c432508"},
+    {file = "openai-1.6.1-py3-none-any.whl", hash = "sha256:bc9f774838d67ac29fb24cdeb2d58faf57de8b311085dcd1348f7aa02a96c7ee"},
+    {file = "openai-1.6.1.tar.gz", hash = "sha256:d553ca9dbf9486b08e75b09e8671e4f638462aaadccfced632bf490fc3d75fa2"},
 ]
 
 [[package]]
@@ -3006,15 +2914,15 @@ files = [
 
 [[package]]
 name = "pypdf"
-version = "3.17.3"
+version = "3.17.4"
 requires_python = ">=3.6"
 summary = "A pure-python PDF library capable of splitting, merging, cropping, and transforming PDF files"
 dependencies = [
     "typing-extensions>=3.7.4.3; python_version < \"3.10\"",
 ]
 files = [
-    {file = "pypdf-3.17.3-py3-none-any.whl", hash = "sha256:1f77682d95dc6308517caa96e267628f747100634ec43476166763a226320817"},
-    {file = "pypdf-3.17.3.tar.gz", hash = "sha256:70c072218e3729218676bdf107e921fa49d1838c2f46056ce26d495c7e58f641"},
+    {file = "pypdf-3.17.4-py3-none-any.whl", hash = "sha256:6aa0f61b33779b64486de3f42835d3668badd48dac4a536aeb87da187a5eacd2"},
+    {file = "pypdf-3.17.4.tar.gz", hash = "sha256:ec96e2e4fc9648ac609d19c00d41e9d606e0ae2ce5a0bbe7691426f5f157166a"},
 ]
 
 [[package]]
@@ -3023,6 +2931,19 @@ version = "0.48.9"
 summary = "A SQL query builder API for Python"
 files = [
     {file = "PyPika-0.48.9.tar.gz", hash = "sha256:838836a61747e7c8380cd1b7ff638694b7a7335345d0f559b04b2cd832ad5378"},
+]
+
+[[package]]
+name = "pyproject-hooks"
+version = "1.0.0"
+requires_python = ">=3.7"
+summary = "Wrappers to call pyproject.toml-based build backend hooks."
+dependencies = [
+    "tomli>=1.1.0; python_version < \"3.11\"",
+]
+files = [
+    {file = "pyproject_hooks-1.0.0-py3-none-any.whl", hash = "sha256:283c11acd6b928d2f6a7c73fa0d01cb2bdc5f07c57a2eeb6e83d5e56b97976f8"},
+    {file = "pyproject_hooks-1.0.0.tar.gz", hash = "sha256:f271b298b97f5955d53fb12b72c1fb1948c22c1a6b70b315c54cedaca0264ef5"},
 ]
 
 [[package]]
@@ -3340,6 +3261,18 @@ dependencies = [
 files = [
     {file = "rich-13.7.0-py3-none-any.whl", hash = "sha256:6da14c108c4866ee9520bbffa71f6fe3962e193b7da68720583850cd4548e235"},
     {file = "rich-13.7.0.tar.gz", hash = "sha256:5cb5123b5cf9ee70584244246816e9114227e0b98ad9176eede6ad54bf5403fa"},
+]
+
+[[package]]
+name = "rouge"
+version = "1.0.1"
+summary = "Full Python ROUGE Score Implementation (not a wrapper)"
+dependencies = [
+    "six",
+]
+files = [
+    {file = "rouge-1.0.1-py3-none-any.whl", hash = "sha256:28d118536e8c774dc47d1d15ec266479b4dd0914c4672ce117d4002789bdc644"},
+    {file = "rouge-1.0.1.tar.gz", hash = "sha256:12b48346ca47d6bcf3c45061f315452b9ccec0620ee895ec85b7efc3d54aae34"},
 ]
 
 [[package]]
@@ -4193,6 +4126,16 @@ files = [
 ]
 
 [[package]]
+name = "tomli"
+version = "2.0.1"
+requires_python = ">=3.7"
+summary = "A lil' TOML parser"
+files = [
+    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
+    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
+]
+
+[[package]]
 name = "toolz"
 version = "0.12.0"
 requires_python = ">=3.5"
@@ -4204,47 +4147,20 @@ files = [
 
 [[package]]
 name = "torch"
-version = "2.0.0"
+version = "2.0.0+cu117"
 requires_python = ">=3.8.0"
+url = "https://download.pytorch.org/whl/cu117/torch-2.0.0%2Bcu117-cp310-cp310-linux_x86_64.whl"
 summary = "Tensors and Dynamic neural networks in Python with strong GPU acceleration"
 dependencies = [
     "filelock",
     "jinja2",
     "networkx",
-    "nvidia-cublas-cu11==11.10.3.66; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
-    "nvidia-cuda-cupti-cu11==11.7.101; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
-    "nvidia-cuda-nvrtc-cu11==11.7.99; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
-    "nvidia-cuda-runtime-cu11==11.7.99; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
-    "nvidia-cudnn-cu11==8.5.0.96; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
-    "nvidia-cufft-cu11==10.9.0.58; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
-    "nvidia-curand-cu11==10.2.10.91; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
-    "nvidia-cusolver-cu11==11.4.0.1; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
-    "nvidia-cusparse-cu11==11.7.4.91; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
-    "nvidia-nccl-cu11==2.14.3; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
-    "nvidia-nvtx-cu11==11.7.91; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
     "sympy",
     "triton==2.0.0; platform_system == \"Linux\" and platform_machine == \"x86_64\"",
     "typing-extensions",
 ]
 files = [
-    {file = "torch-2.0.0-1-cp310-cp310-manylinux2014_aarch64.whl", hash = "sha256:c9090bda7d2eeeecd74f51b721420dbeb44f838d4536cc1b284e879417e3064a"},
-    {file = "torch-2.0.0-1-cp311-cp311-manylinux2014_aarch64.whl", hash = "sha256:bd42db2a48a20574d2c33489e120e9f32789c4dc13c514b0c44272972d14a2d7"},
-    {file = "torch-2.0.0-1-cp39-cp39-manylinux2014_aarch64.whl", hash = "sha256:ab2da16567cb55b67ae39e32d520d68ec736191d88ac79526ca5874754c32203"},
-    {file = "torch-2.0.0-cp310-cp310-manylinux1_x86_64.whl", hash = "sha256:7a9319a67294ef02459a19738bbfa8727bb5307b822dadd708bc2ccf6c901aca"},
-    {file = "torch-2.0.0-cp310-cp310-manylinux2014_aarch64.whl", hash = "sha256:9f01fe1f6263f31bd04e1757946fd63ad531ae37f28bb2dbf66f5c826ee089f4"},
-    {file = "torch-2.0.0-cp310-cp310-win_amd64.whl", hash = "sha256:527f4ae68df7b8301ee6b1158ca56350282ea633686537b30dbb5d7b4a52622a"},
-    {file = "torch-2.0.0-cp310-none-macosx_10_9_x86_64.whl", hash = "sha256:ce9b5a49bd513dff7950a5a07d6e26594dd51989cee05ba388b03e8e366fd5d5"},
-    {file = "torch-2.0.0-cp310-none-macosx_11_0_arm64.whl", hash = "sha256:53e1c33c6896583cdb9a583693e22e99266444c4a43392dddc562640d39e542b"},
-    {file = "torch-2.0.0-cp311-cp311-manylinux1_x86_64.whl", hash = "sha256:09651bff72e439d004c991f15add0c397c66f98ab36fe60d5514b44e4da722e8"},
-    {file = "torch-2.0.0-cp311-cp311-manylinux2014_aarch64.whl", hash = "sha256:d439aec349c98f12819e8564b8c54008e4613dd4428582af0e6e14c24ca85870"},
-    {file = "torch-2.0.0-cp311-cp311-win_amd64.whl", hash = "sha256:2802f84f021907deee7e9470ed10c0e78af7457ac9a08a6cd7d55adef835fede"},
-    {file = "torch-2.0.0-cp311-none-macosx_10_9_x86_64.whl", hash = "sha256:01858620f25f25e7a9ec4b547ff38e5e27c92d38ec4ccba9cfbfb31d7071ed9c"},
-    {file = "torch-2.0.0-cp311-none-macosx_11_0_arm64.whl", hash = "sha256:9a2e53b5783ef5896a6af338b36d782f28e83c8ddfc2ac44b67b066d9d76f498"},
-    {file = "torch-2.0.0-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:6befaad784004b7af357e3d87fa0863c1f642866291f12a4c2af2de435e8ac5c"},
-    {file = "torch-2.0.0-cp39-cp39-manylinux2014_aarch64.whl", hash = "sha256:a83b26bd6ae36fbf5fee3d56973d9816e2002e8a3b7d9205531167c28aaa38a7"},
-    {file = "torch-2.0.0-cp39-cp39-win_amd64.whl", hash = "sha256:c7e67195e1c3e33da53954b026e89a8e1ff3bc1aeb9eb32b677172d4a9b5dcbf"},
-    {file = "torch-2.0.0-cp39-none-macosx_10_9_x86_64.whl", hash = "sha256:6e0b97beb037a165669c312591f242382e9109a240e20054d5a5782d9236cad0"},
-    {file = "torch-2.0.0-cp39-none-macosx_11_0_arm64.whl", hash = "sha256:297a4919aff1c0f98a58ebe969200f71350a1d4d4f986dbfd60c02ffce780e99"},
+    {file = "torch-2.0.0+cu117-cp310-cp310-linux_x86_64.whl", hash = "sha256:f6e26492d214edab5b407e903ed3c7b190ac5709330bd72060d1be01b354c198"},
 ]
 
 [[package]]
@@ -4367,7 +4283,7 @@ files = [
 
 [[package]]
 name = "trulens-eval"
-version = "0.19.1"
+version = "0.20.0"
 requires_python = ">= 3.8, < 3.12"
 summary = "Library to systematically track and evaluate LLM based applications."
 dependencies = [
@@ -4390,7 +4306,7 @@ dependencies = [
     "typing-inspect>=0.8.0",
 ]
 files = [
-    {file = "trulens_eval-0.19.1-py3-none-any.whl", hash = "sha256:d325ac72b01cb259e8060d667db4b189391e30120d151bd9871cfb7ffb409858"},
+    {file = "trulens_eval-0.20.0-py3-none-any.whl", hash = "sha256:ae03c931e64507c7152e6a7b748bafe419210f4939bea9131def02505e79236b"},
 ]
 
 [[package]]
@@ -4405,16 +4321,6 @@ dependencies = [
 files = [
     {file = "typer-0.9.0-py3-none-any.whl", hash = "sha256:5d96d986a21493606a358cae4461bd8cdf83cbf33a5aa950ae629ca3b51467ee"},
     {file = "typer-0.9.0.tar.gz", hash = "sha256:50922fd79aea2f4751a8e0408ff10d2662bd0c8bbfa84755a699f3bada2978b2"},
-]
-
-[[package]]
-name = "types-protobuf"
-version = "4.24.0.4"
-requires_python = ">=3.7"
-summary = "Typing stubs for protobuf"
-files = [
-    {file = "types-protobuf-4.24.0.4.tar.gz", hash = "sha256:57ab42cb171dfdba2c74bb5b50c250478538cc3c5ed95b8b368929ad0c9f90a5"},
-    {file = "types_protobuf-4.24.0.4-py3-none-any.whl", hash = "sha256:131ab7d0cbc9e444bc89c994141327dcce7bcaeded72b1acb72a94827eb9c7af"},
 ]
 
 [[package]]
@@ -4743,16 +4649,6 @@ files = [
     {file = "websockets-12.0-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:2cb388a5bfb56df4d9a406783b7f9dbefb888c09b71629351cc6b036e9259370"},
     {file = "websockets-12.0-py3-none-any.whl", hash = "sha256:dc284bbc8d7c78a6c69e0c7325ab46ee5e40bb4d50e494d8131a07ef47500e9e"},
     {file = "websockets-12.0.tar.gz", hash = "sha256:81df9cbcbb6c260de1e007e58c011bfebe2dafc8435107b0537f393dd38c8b1b"},
-]
-
-[[package]]
-name = "wheel"
-version = "0.41.3"
-requires_python = ">=3.7"
-summary = "A built-package format for Python"
-files = [
-    {file = "wheel-0.41.3-py3-none-any.whl", hash = "sha256:488609bc63a29322326e05560731bf7bfea8e48ad646e1f5e40d366607de0942"},
-    {file = "wheel-0.41.3.tar.gz", hash = "sha256:4d4987ce51a49370ea65c0bfd2234e8ce80a12780820d9dc462597a6e60d0841"},
 ]
 
 [[package]]

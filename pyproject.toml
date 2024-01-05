@@ -13,7 +13,7 @@ dependencies = [
     "pysqlite3-binary>=0.5.2.post1",
     "tiktoken>=0.5.1",
     "sentence-transformers>=2.2.2",
-    "torch==2.0.0",
+    "torch @ https://download.pytorch.org/whl/cu117/torch-2.0.0%2Bcu117-cp310-cp310-linux_x86_64.whl",
     "bs4>=0.0.1",
     "ipykernel>=6.27.1",
     "cohere>=4.39",
@@ -24,11 +24,12 @@ dependencies = [
     "streamlit-javascript>=0.1.5",
     "serpapi>=0.1.5",
     "google-search-results>=2.4.2",
+    "llmsherpa>=0.1.3",
+    "bert-score>=0.3.13",
+    "rouge>=1.0.1",
 ]
 requires-python = ">=3.9,<3.12,!=3.9.7"  
 readme = "README.md"
 license = {text = "None"}
 version = "0.1.0"
 
-[tool.pdm.dependencies]
-torch = ">=2.0.0, !=2.0.1, !=2.1.0"
