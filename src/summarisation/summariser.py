@@ -2,21 +2,14 @@ from typing import Any
 import os
 from serpapi import GoogleSearch
 import regex as re
-import prompts
+from summarisation import prompts
 from openai import OpenAI
 from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from llmsherpa.readers import LayoutPDFReader
 
 OPENAI_API_KEY  = os.environ["OPENAI_API_KEY"]
 GOOGLE_SEARCH_API_KEY = os.environ["GOOGLE_SEARCH_API_KEY"]
-
-
-from typing import Any
-from serpapi import GoogleSearch
-import regex as re
-import prompts
-from openai import OpenAI
-from llmsherpa.readers import LayoutPDFReader
 
 
 default_prompts = {"system_prompt": prompts.ROLE_PROMPT,
@@ -33,20 +26,20 @@ class PaperSummariser:
         self.temperature = temperature
         self.stop_at = 7
 
-    def _summarise_content(self, text_chunks) -> Any:
+    def _iterate(self, text_chunks, self_check=True) -> Any:
         
         text_chunk_summary = []
         for text_chunk in text_chunks:
-            page_summary = self._summarise_page(text_chunk)
+            page_summary = self._summarise(text_chunk)
             text_chunk_summary.append(page_summary)
         self.summary_list = text_chunk_summary
 
         all_page_summary ="\n".join(text_chunk_summary)
-        final_summary = self._summarise_page(all_page_summary)
+        final_summary = self._summarise(all_page_summary)
 
         return final_summary
 
-    def _summarise_page(self, text_chunk):
+    def _summarise(self, text_chunk):
         
         prompt = self.prompts["user_prompt"].format(text_chunk=text_chunk)
         messages = [{"role": "system", "content": self.prompts["system_prompt"]},
@@ -99,6 +92,7 @@ class PaperSummariser:
         content = "\n".join([doc.page_content for doc in documents])
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=0)
         text_chunks = text_splitter.split_text(content)
+        self.text_chunks = text_chunks
 
         return text_chunks
     
@@ -119,7 +113,7 @@ class PaperSummariser:
             text = section.to_text(include_children=True, recurse=True)
             text_to_include += text
             text_chunks.append(text_to_include)
-
+        self.text_chunks = text_chunks
         return text_chunks
     
     
@@ -144,7 +138,7 @@ class PaperSummariser:
             publish_year, cited_times = PaperSummariser.google_scholar_search(query=title)
             summary.update({"publish_year": publish_year, "cited_times": cited_times})
 
-        final_summary = self._summarise_content(text_chunks)
+        final_summary = self._iterate(text_chunks)
         summary.update({"summary": final_summary})
 
         return summary

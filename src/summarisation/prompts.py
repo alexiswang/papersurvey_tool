@@ -10,9 +10,9 @@ INSTRUCTION_PROMPT = """
     Guidance:
     - Summarise the the key conclusions in a single short paragraph of approx. 100 words.
     - the summary should be highly dense ans concise yet self-contained. 
-    - list relevant findings, observations and supportive arguments for the key conclusionsin in 3-5 bullet points. 
-    - each finding has 1-2 sentences and be as close to the original text
-    - describe the methods in 3-5 short sentences
+    - list relevant findings, observations and supportive arguments for the key conclusionsin in 2-3 bullet points. 
+    - each finding has 1 sentences and be as close to the original text
+    - describe the methods in 1-2 short sentences
 
     <format>
     Summary: <conclusion>
